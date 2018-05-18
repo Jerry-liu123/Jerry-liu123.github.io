@@ -6,18 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://llyit.cn#http://liuluanyi.cn">
-  <title>Tag: 闲谈 | 奕中世界</title>
+  <title>简述邮件解析过程 | 奕中世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好吃懒做">
-<meta property="og:type" content="website">
-<meta property="og:title" content="奕中世界">
-<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/tags/闲谈/index.html">
+  <meta name="description" content="ESA是思科的对邮件传递提供防护的一种产品。 环境准备">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简述邮件解析过程">
+<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/2018/05/19/邮件转发过程/index.html">
 <meta property="og:site_name" content="奕中世界">
-<meta property="og:description" content="好吃懒做">
+<meta property="og:description" content="ESA是思科的对邮件传递提供防护的一种产品。 环境准备">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE1.png">
+<meta property="og:image" content="http://p8xo44q4w.bkt.clouddn.com/%E5%87%BA1.png">
+<meta property="og:image" content="http://p8xo44q4w.bkt.clouddn.com/%E6%97%A0ESA.png">
+<meta property="og:image" content="http://p8xo44q4w.bkt.clouddn.com/%E5%87%BA%E5%8A%A0%E6%A0%87%E8%AE%B0.png">
+<meta property="og:image" content="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE1.png">
+<meta property="og:image" content="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE2.png">
+<meta property="og:image" content="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE3.png">
+<meta property="og:updated_time" content="2018-05-18T17:34:45.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="奕中世界">
-<meta name="twitter:description" content="好吃懒做">
+<meta name="twitter:title" content="简述邮件解析过程">
+<meta name="twitter:description" content="ESA是思科的对邮件传递提供防护的一种产品。 环境准备">
+<meta name="twitter:image" content="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE1.png">
   
     <link rel="alternative" href="/atom.xml" title="奕中世界" type="application/atom+xml">
   
@@ -151,60 +161,198 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-邮件转发过程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/16/小事汇聚成功/" class="archive-article-date">
-  	<time datetime="2017-11-15T16:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/16/小事汇聚成功/">小事汇聚成功</a>
+    <h1 class="article-title" itemprop="name">
+      简述邮件解析过程
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/05/19/邮件转发过程/" class="archive-article-date">
+  	<time datetime="2018-05-18T17:20:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ESA是思科的对邮件传递提供防护的一种产品。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p><img src="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE1.png" alt=""></p>
+<a id="more"></a>
+<blockquote>
+<p>内部用户A的邮件是A@llyit.cn</p>
+<p>外部cisco公司用户B邮件是B@cisco.com</p>
+<p>外部邮件服务器：Public-mail</p>
+<p>外部DNS服务器：Public-DNS</p>
+<p>内部邮件服务器：Private-mail</p>
+<p>内部DNS服务器：Private-DNS</p>
+<p>外部DNS服务器：Public-DNS 上面做的DNS配置</p>
+<pre><code>邮件交换器  mail.cisco.com 
+
+A记录  cisco 202.100.1.241
+
+       mail  202.100.1.241 
+
+       与父文件夹相同  202.100.1.240
+</code></pre><p>内部DNS服务器：Private-DNS  上面做的DNS配置</p>
+<pre><code>邮件交换器    mail.llyit.cn
+
+A 记录 llyit  192.168.1.240
+
+       mail   192.168.1.240
+</code></pre></blockquote>
+<h2 id="没有ESA邮件网关服务器转发"><a href="#没有ESA邮件网关服务器转发" class="headerlink" title="没有ESA邮件网关服务器转发"></a>没有ESA邮件网关服务器转发</h2><p><img src="http://p8xo44q4w.bkt.clouddn.com/%E5%87%BA1.png" alt=""></p>
+<h3 id="内部Inside-PC主机用户A发给B-cisco-com邮件过程"><a href="#内部Inside-PC主机用户A发给B-cisco-com邮件过程" class="headerlink" title="内部Inside-PC主机用户A发给B@cisco.com邮件过程"></a>内部Inside-PC主机用户A发给B@cisco.com邮件过程</h3><p><img src="http://p8xo44q4w.bkt.clouddn.com/%E6%97%A0ESA.png" alt=""></p>
+<p>通过SMTP发邮件，邮件服务器需要去解析，需要有MX邮件解析记录，和域名解析记录还是有一定区别：有一定的DNS知识的人肯定都会知道要访问XX.com或xx.cn都有一个A记录。<br>A记录通俗讲就是记录域名的IP地址。</p>
+<p>MX邮件解析记录通俗点讲就是记录了你所要发送的目标邮件地址的应该发往的邮件服务器。这是内部的邮件服务器就需要先查找内部的邮件DNS服务器，而内部的DNS服务器肯定只能解析内部的llyit.cn的域，肯定不能解析其他的域，比如：cisco.com的域。所以这个时候需要通过内部的DNS服务器去发往外部的DNS服务器进行解析。</p>
+<p>那如何让内部DNS服务器上进行能够访问到外部DNS呢？</p>
+<p>我这里是设置是：在DNS服务器上设置了一个转发器：202.100.1.240</p>
+<p>通过外网的DNS的邮件解析记录最终查询到了Public-mail邮件服务器，外网DNS服务做出相应的回应传回到内部的DNS服务器告诉说：Public-mail邮件服务器的地址是202.100.1.241，内部的DNS服务器收到相应的信息，再去传递给Private-mail邮件服务器，最终邮件服务器就可以直接发给外网的邮件服务器202.100.1.241了。</p>
+<h3 id="外部Outside-PC主机用户B发给A-llyit-cn邮件过程"><a href="#外部Outside-PC主机用户B发给A-llyit-cn邮件过程" class="headerlink" title="外部Outside-PC主机用户B发给A@llyit.cn邮件过程"></a>外部Outside-PC主机用户B发给A@llyit.cn邮件过程</h3><p><img src="http://p8xo44q4w.bkt.clouddn.com/%E5%87%BA%E5%8A%A0%E6%A0%87%E8%AE%B0.png" alt=""></p>
+<p>外网的Outside-PC主机用户B通过SMTP发送邮件，首先传给外网的Public-mail邮件服务器，外网的Public-mail邮件服务器需要到外网的DNS服务器去进行查询MX邮件解析记录，这是外网的DNS本地无法查询到，这时就通过邮件转发器去查找内部的DNS服务器上进行查询，这时内部的DNS服务器根据自己邮件解析记录进行回应相应的A记录信息，返回给外网的DNS服务，外网的DNS服务器再传递给自己的Public-mail邮件服务器，这是Public-mail邮件服务器就可以根据A记录地址进行转发出去了</p>
+<h2 id="添加了ESA邮件服务器网关转发"><a href="#添加了ESA邮件服务器网关转发" class="headerlink" title="添加了ESA邮件服务器网关转发"></a>添加了ESA邮件服务器网关转发</h2><p><img src="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE1.png" alt=""></p>
+<p>在邮件服务器上面设置了中继邮件服务器的地址：192.168.1.243</p>
+<h3 id="内部Inside-PC主机用户A发给B-cisco-com邮件过程-1"><a href="#内部Inside-PC主机用户A发给B-cisco-com邮件过程-1" class="headerlink" title="内部Inside-PC主机用户A发给B@cisco.com邮件过程"></a>内部Inside-PC主机用户A发给B@cisco.com邮件过程</h3><p><img src="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE2.png" alt=""></p>
+<p>内部Inside-PC主机用户A通过SMTP发邮件，首先通过邮件服务器，邮件转发器传递给ESA邮件网关防火墙的，这里也可以理解为代理邮件服务器。因为此时的内部Private-mail邮件服务器不再进行转发出邮件了，都是要经过ESA邮件服务器来转发 。</p>
+<p>下面的步骤就和没有ESA邮件防火墙服务器的步骤一样了：需要通过内部的DNS服务器去发往外部的DNS服务器进行解析。通过外网的DNS的邮件解析记录最终查询到了邮件服务器，外网DNS服务做出相应的回应传回到内部的DNS服务器告诉说：邮件服务器的地址是202.100.1.241，内部的DNS服务器收到相应的信息，再去传递给ESA代理邮件服务器，最终ESA代理邮件服务器就可以直接发给外网的邮件服务器202.100.1.241了。</p>
+<h3 id="外部Outside-PC主机用户B发给A-llyit-cn邮件过程-1"><a href="#外部Outside-PC主机用户B发给A-llyit-cn邮件过程-1" class="headerlink" title="外部Outside-PC主机用户B发给A@llyit.cn邮件过程"></a>外部Outside-PC主机用户B发给A@llyit.cn邮件过程</h3><p><img src="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE3.png" alt=""></p>
+<p>外网的Outside-PC主机用户B通过SMTP发送邮件，首先传给外网的邮件服务器，外网的Public-mail邮件服务器需要到外网的DNS服务器去进行查询MX邮件解析记录，这是外网的DNS本地无法查询到，这是就通过邮件转发器去查找内部的DNS进行查询，这时内部的DNS服务器根据自己邮件解析记录进行回应的A记录，这时就和前面开始有所区别了！</p>
+<p>这时DNS服务器的邮件转发器对应的A记录所指的就是：192.168.1.243而不是192.168.1.240，接下来把A记录传递给外网的DNS服务器，外网的DNS服务器再把相应的信息传递给Public-mail邮件服务器，此时外网的Public-mail邮件服务器就可以做出相应的转发了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闲谈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://llyit.cn#http://liuluanyi.cn/2018/05/19/邮件转发过程/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/11/16/小事汇聚成功/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">小事汇聚成功</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="邮件转发过程" ></div> 
+<script type="text/javascript"> 
+window.YiliaChangyanWrap = function() {
+    var appid = "cytjFXjSQ"; 
+    var conf = "463dfb67990e444b6230b6b15304c1a3"; 
+    var width = window.innerWidth || document.documentElement.clientWidth; 
+    if (width < 960) { 
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+}
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -227,9 +375,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
