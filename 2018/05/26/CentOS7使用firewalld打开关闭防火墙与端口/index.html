@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://llyit.cn#http://liuluanyi.cn">
-  <title>奕中世界</title>
+  <title>CentOS7使用firewalld打开关闭防火墙与端口 | 奕中世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好吃懒做">
-<meta property="og:type" content="website">
-<meta property="og:title" content="奕中世界">
-<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/index.html">
+  <meta name="description" content="1、firewalld的基本使用启动： systemctl start firewalld查看状态： systemctl status firewalld停止： systemctl disable firewalld禁用： systemctl stop firewalld">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7使用firewalld打开关闭防火墙与端口">
+<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/index.html">
 <meta property="og:site_name" content="奕中世界">
-<meta property="og:description" content="好吃懒做">
+<meta property="og:description" content="1、firewalld的基本使用启动： systemctl start firewalld查看状态： systemctl status firewalld停止： systemctl disable firewalld禁用： systemctl stop firewalld">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-26T04:02:46.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="奕中世界">
-<meta name="twitter:description" content="好吃懒做">
+<meta name="twitter:title" content="CentOS7使用firewalld打开关闭防火墙与端口">
+<meta name="twitter:description" content="1、firewalld的基本使用启动： systemctl start firewalld查看状态： systemctl status firewalld停止： systemctl disable firewalld禁用： systemctl stop firewalld">
   
     <link rel="alternative" href="/atom.xml" title="奕中世界" type="application/atom+xml">
   
@@ -151,16 +153,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-CentOS7使用firewalld打开关闭防火墙与端口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-CentOS7使用firewalld打开关闭防火墙与端口" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/">CentOS7使用firewalld打开关闭防火墙与端口</a>
+    <h1 class="article-title" itemprop="name">
+      CentOS7使用firewalld打开关闭防火墙与端口
     </h1>
   
 
@@ -174,9 +174,12 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>1、firewalld的基本使用<br>启动： systemctl start firewalld<br>查看状态： systemctl status firewalld<br>停止： systemctl disable firewalld<br>禁用： systemctl stop firewalld</p>
-        
-          <a class="article-more-a" href="/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/#more">more >></a>
-        
+ <a id="more"></a>
+<p>2.systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。<br>启动一个服务：systemctl start firewalld.service<br>关闭一个服务：systemctl stop firewalld.service<br>重启一个服务：systemctl restart firewalld.service<br>显示一个服务的状态：systemctl status firewalld.service<br>在开机时启用一个服务：systemctl enable firewalld.service<br>在开机时禁用一个服务：systemctl disable firewalld.service<br>查看服务是否开机启动：systemctl is-enabled firewalld.service<br>查看已启动的服务列表：systemctl list-unit-files|grep enabled<br>查看启动失败的服务列表：systemctl –failed</p>
+<p>3.配置firewalld-cmd</p>
+<p>查看版本： firewall-cmd –version<br>查看帮助： firewall-cmd –help<br>显示状态： firewall-cmd –state<br>查看所有打开的端口： firewall-cmd –zone=public –list-ports<br>更新防火墙规则： firewall-cmd –reload<br>查看区域信息:  firewall-cmd –get-active-zones<br>查看指定接口所属区域： firewall-cmd –get-zone-of-interface=eth0<br>拒绝所有包：firewall-cmd –panic-on<br>取消拒绝状态： firewall-cmd –panic-off<br>查看是否拒绝： firewall-cmd –query-panic</p>
+<p>那怎么开启一个端口呢<br>添加<br>firewall-cmd –zone=public –add-port=80/tcp –permanent    （–permanent永久生效，没有此参数重启后失效）<br>重新载入<br>firewall-cmd –reload<br>查看<br>firewall-cmd –zone= public –query-port=80/tcp<br>删除<br>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
+
       
 
       
@@ -198,16 +201,75 @@ var _hmt = _hmt || [];
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://llyit.cn#http://liuluanyi.cn/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/26/CentOs7安装python3以及Scapy3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOs7安装python3以及Scapy3</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -227,399 +289,25 @@ var _hmt = _hmt || [];
 
 
 
-
   
-    <article id="post-CentOs7安装python3以及Scapy3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/26/CentOs7安装python3以及Scapy3/">CentOs7安装python3以及Scapy3</a>
-    </h1>
   
 
-        
-        <a href="/2018/05/26/CentOs7安装python3以及Scapy3/" class="archive-article-date">
-  	<time datetime="2018-05-26T03:48:12.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>当前市面上流行的Linux系统主要分为Readhat和Debian两大系列。</p>
-<p>一、Redhat系列</p>
-<p>Redhat：主要是服务器型Linux，商用收费；RHEL是Red Hat Enterprise Linux的缩写。</p>
-<p>CentOS：Redhat的100%复制版本，不收版权费用。</p>
-<p>二、Debian系列</p>
-<p>Debian：主要是桌面型Linux，代表为Ubuntu。</p>
-<p>上述两种最新版本系列：Redhat、Ubuntu、Kali Linux 都是默认装有python3的，所以想在别的系统上面使用python3就需要自己下载安装使用了。我下面就拿我比较喜欢的CentOS系统举例其中的一系列过程吧。</p>
-<p><strong><em>重要：虽说你最后安装了python3也不可以删除python2,因为有很多系统命令，比如yum都要用到。</em></strong></p>
-        
-          <a class="article-more-a" href="/2018/05/26/CentOs7安装python3以及Scapy3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/26/CentOs7安装python3以及Scapy3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-邮件转发过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/邮件转发过程/">邮件转发过程</a>
-    </h1>
+  <div id="SOHUCS" sid="CentOS7使用firewalld打开关闭防火墙与端口" ></div> 
+<script type="text/javascript"> 
+window.YiliaChangyanWrap = function() {
+    var appid = "cytjFXjSQ"; 
+    var conf = "463dfb67990e444b6230b6b15304c1a3"; 
+    var width = window.innerWidth || document.documentElement.clientWidth; 
+    if (width < 960) { 
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+}
+</script>
   
 
-        
-        <a href="/2018/05/19/邮件转发过程/" class="archive-article-date">
-  	<time datetime="2018-05-18T17:11:17.546Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ESA是思科的对邮件传递提供防护的一种产品。</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p><img src="http://p8xo44q4w.bkt.clouddn.com/%E6%8B%93%E6%89%91%E5%9B%BE1.png" alt=""></p>
-        
-          <a class="article-more-a" href="/2018/05/19/邮件转发过程/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/19/邮件转发过程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-小事汇聚成功" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/16/小事汇聚成功/">小事汇聚成功</a>
-    </h1>
   
 
-        
-        <a href="/2017/11/16/小事汇聚成功/" class="archive-article-date">
-  	<time datetime="2017-11-15T16:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h3 id="别把“学习”太当回事"><a href="#别把“学习”太当回事" class="headerlink" title="别把“学习”太当回事"></a>别把“学习”太当回事</h3><p>此“学习”非彼学习，指的是除了懂得理论知识，能够自己实践出东西却很难的一类人。我们都知道在到多数的大学里面，在做计算机方面的老师讲课几乎是按照PPT课件照本宣科，念念理论，在实验课几乎不会给你动手演示任何的操作。在你考试可以考出很高的分数，然而在真正实践的时候你告诉我你不会，这是多么可悲的事情啊。可是在中国式的大学里面这样的案例数不计数。<br>
-        
-          <a class="article-more-a" href="/2017/11/16/小事汇聚成功/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闲谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/16/小事汇聚成功/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-转换思维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/14/转换思维/">转换思维</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/14/转换思维/" class="archive-article-date">
-  	<time datetime="2017-11-14T11:27:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><em>如何将自身的缺陷变成优势呢？关键是看我们采取什么样的态度和方法，每个人的身上都有尚未苏醒的潜能，同时也有没能发挥出来的优势，切莫因为一时的不足和劣势，就彻底放弃自己的独特一面。</em></p>
-        
-          <a class="article-more-a" href="/2017/11/14/转换思维/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/14/转换思维/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-随想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/14/随想/">随想</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/14/随想/" class="archive-article-date">
-  	<time datetime="2017-11-13T22:07:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h3 id="绝望"><a href="#绝望" class="headerlink" title="绝望"></a>绝望</h3><p>在这大千世界，人本就是一种非常复杂的动物。由这样的动物们自然会形成复杂的生活的，让你感到生活的不易和艰难。<br>
-        
-          <a class="article-more-a" href="/2017/11/14/随想/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/14/随想/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -642,8 +330,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
