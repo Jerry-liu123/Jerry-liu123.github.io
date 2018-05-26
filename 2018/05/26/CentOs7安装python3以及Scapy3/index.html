@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://llyit.cn#http://liuluanyi.cn">
-  <title>Archives | 奕中世界</title>
+  <title>CentOs7安装python3以及Scapy3 | 奕中世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好吃懒做">
-<meta property="og:type" content="website">
-<meta property="og:title" content="奕中世界">
-<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/archives/index.html">
+  <meta name="description" content="基本介绍当前市面上流行的Linux系统主要分为Readhat和Debian两大系列。 一、Redhat系列 Redhat：主要是服务器型Linux，商用收费；RHEL是Red Hat Enterprise Linux的缩写。 CentOS：Redhat的100%复制版本，不收版权费用。 二、Debian系列 Debian：主要是桌面型Linux，代表为Ubuntu。 上述两种最新版本系列：Redh">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOs7安装python3以及Scapy3">
+<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/2018/05/26/CentOs7安装python3以及Scapy3/index.html">
 <meta property="og:site_name" content="奕中世界">
-<meta property="og:description" content="好吃懒做">
+<meta property="og:description" content="基本介绍当前市面上流行的Linux系统主要分为Readhat和Debian两大系列。 一、Redhat系列 Redhat：主要是服务器型Linux，商用收费；RHEL是Red Hat Enterprise Linux的缩写。 CentOS：Redhat的100%复制版本，不收版权费用。 二、Debian系列 Debian：主要是桌面型Linux，代表为Ubuntu。 上述两种最新版本系列：Redh">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-26T03:50:40.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="奕中世界">
-<meta name="twitter:description" content="好吃懒做">
+<meta name="twitter:title" content="CentOs7安装python3以及Scapy3">
+<meta name="twitter:description" content="基本介绍当前市面上流行的Linux系统主要分为Readhat和Debian两大系列。 一、Redhat系列 Redhat：主要是服务器型Linux，商用收费；RHEL是Red Hat Enterprise Linux的缩写。 CentOS：Redhat的100%复制版本，不收版权费用。 二、Debian系列 Debian：主要是桌面型Linux，代表为Ubuntu。 上述两种最新版本系列：Redh">
   
     <link rel="alternative" href="/atom.xml" title="奕中世界" type="application/atom+xml">
   
@@ -151,36 +153,70 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-CentOs7安装python3以及Scapy3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      CentOs7安装python3以及Scapy3
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/26/CentOs7安装python3以及Scapy3/" class="archive-article-date">
+
+        
+        <a href="/2018/05/26/CentOs7安装python3以及Scapy3/" class="archive-article-date">
   	<time datetime="2018-05-26T03:48:12.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/26/CentOs7安装python3以及Scapy3/">CentOs7安装python3以及Scapy3</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>当前市面上流行的Linux系统主要分为Readhat和Debian两大系列。</p>
+<p>一、Redhat系列</p>
+<p>Redhat：主要是服务器型Linux，商用收费；RHEL是Red Hat Enterprise Linux的缩写。</p>
+<p>CentOS：Redhat的100%复制版本，不收版权费用。</p>
+<p>二、Debian系列</p>
+<p>Debian：主要是桌面型Linux，代表为Ubuntu。</p>
+<p>上述两种最新版本系列：Redhat、Ubuntu、Kali Linux 都是默认装有python3的，所以想在别的系统上面使用python3就需要自己下载安装使用了。我下面就拿我比较喜欢的CentOS系统举例其中的一系列过程吧。</p>
+<p><strong><em>重要：虽说你最后安装了python3也不可以删除python2,因为有很多系统命令，比如yum都要用到。</em></strong></p>
+<a id="more"></a>
+<p>1、首先安装依赖包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
+<p>我先里面两个不安装会出现的错误和麻烦！</p>
+<p>没有安装OpenSSL的报错现象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ignoring ensurepip failure:pip required SSL/TLS</span><br></pre></td></tr></table></figure></p>
+<p>没有安装readline-devel的麻烦</p>
+<p>进入python之后就无法使用TAB补全和上下键补全功能，一旦使用上下键会出现一串乱码</p>
+<p>所以不安装一些相应的依赖，python3安装成功后在使用中会报这样那样的错误，最好提前安装了。</p>
+<p>2、选择存放目录是/usr/local/python3，默认是没有这个文件夹的，所以要自己进行新建。命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/python3</span><br></pre></td></tr></table></figure>
+<p>3、这样就建立了一个空文件夹，下载Python3</p>
+<p>根据自己需求下载不同版本的Python3，我下载的是Python3.6.5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz</span><br></pre></td></tr></table></figure>
+<p>4、然后在此目录下解压压缩包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">解压命令</span><br><span class="line">tar -xvJf  Python-3.6.5.tar.xz  </span><br><span class="line"></span><br><span class="line">进入解压后的python3目录</span><br><span class="line">cd Python-3.6.5</span><br><span class="line"></span><br><span class="line">进行编译‘/usr/local/python3’路径根据自己实际路径填写，用pwd查看当前路径,遇到填写路径皆是如此</span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr/local/python3</span><br><span class="line"></span><br><span class="line">进行安装</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>5、最后创建软链接</p>
+<p>相当于在windows下面需要配置环境变量才可以在全局模式下使用</p>
+<p>路径根据自己实际路径填写，用pwd查看当前路径,遇到填写路径皆是如此</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ln -s /usr/local/python3/bin/python3 /usr/bin/python3</span><br><span class="line">ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+<p>6、安装完成后运行python3，进行检验</p>
+<h2 id="安装scapy"><a href="#安装scapy" class="headerlink" title="安装scapy"></a>安装scapy</h2><p>1、有两种方法，第一种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install scapy-python3</span><br></pre></td></tr></table></figure>
+<p>第二种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install-3.6 scapy-python3</span><br></pre></td></tr></table></figure>
+<p>当然上面的‘easy_install-3.6’默认也不是能够全局使用的，也要创建相应的软链接</p>
+<p>2、提示成功之后，创建软链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/scapy /usr/bin/scapy</span><br></pre></td></tr></table></figure>
+<p>3、安装完成后运行scapy，进行检验</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -192,181 +228,117 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/19/邮件转发过程/" class="archive-article-date">
-  	<time datetime="2018-05-18T17:11:17.546Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/19/邮件转发过程/">邮件转发过程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/16/小事汇聚成功/" class="archive-article-date">
-  	<time datetime="2017-11-15T16:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/16/小事汇聚成功/">小事汇聚成功</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闲谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://llyit.cn#http://liuluanyi.cn/2018/05/26/CentOs7安装python3以及Scapy3/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/14/转换思维/" class="archive-article-date">
-  	<time datetime="2017-11-14T11:27:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/19/邮件转发过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">邮件转发过程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/14/转换思维/">转换思维</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/14/随想/" class="archive-article-date">
-  	<time datetime="2017-11-13T22:07:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/14/随想/">随想</a>
-    </h1>
+  <div id="SOHUCS" sid="CentOs7安装python3以及Scapy3" ></div> 
+<script type="text/javascript"> 
+window.YiliaChangyanWrap = function() {
+    var appid = "cytjFXjSQ"; 
+    var conf = "463dfb67990e444b6230b6b15304c1a3"; 
+    var width = window.innerWidth || document.documentElement.clientWidth; 
+    if (width < 960) { 
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+}
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -389,8 +361,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
