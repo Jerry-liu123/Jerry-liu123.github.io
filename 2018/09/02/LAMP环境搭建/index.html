@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://llyit.cn#http://liuluanyi.cn">
-  <title>CentOS7使用firewalld打开关闭防火墙与端口 | 奕中世界</title>
+  <title>小事汇聚成功 | 奕中世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、firewalld的基本使用启动： systemctl start firewalld查看状态： systemctl status firewalld停止： systemctl disable firewalld禁用： systemctl stop firewalld">
+  <meta name="description" content="LAMP是Linux Apache MySQL PHP 的简写，即把Apache 、MySQL以及PHP安装在Linux系统上，组成一个环境来运行PHP的脚本语言，通常是网站。我们可以把Apache+PHP安装在一台机器上，再把MySQL安装在另外一台机器上，也可以把它们三个安装在一台机器上。但Apache和PHP需要在同一台机器上，这是因为PHP是作为Apache的一个模块存在的，它们必须在一">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS7使用firewalld打开关闭防火墙与端口">
-<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/index.html">
+<meta property="og:title" content="小事汇聚成功">
+<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/2018/09/02/LAMP环境搭建/index.html">
 <meta property="og:site_name" content="奕中世界">
-<meta property="og:description" content="1、firewalld的基本使用启动： systemctl start firewalld查看状态： systemctl status firewalld停止： systemctl disable firewalld禁用： systemctl stop firewalld">
+<meta property="og:description" content="LAMP是Linux Apache MySQL PHP 的简写，即把Apache 、MySQL以及PHP安装在Linux系统上，组成一个环境来运行PHP的脚本语言，通常是网站。我们可以把Apache+PHP安装在一台机器上，再把MySQL安装在另外一台机器上，也可以把它们三个安装在一台机器上。但Apache和PHP需要在同一台机器上，这是因为PHP是作为Apache的一个模块存在的，它们必须在一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-26T04:02:46.983Z">
+<meta property="og:updated_time" content="2018-09-02T11:02:15.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS7使用firewalld打开关闭防火墙与端口">
-<meta name="twitter:description" content="1、firewalld的基本使用启动： systemctl start firewalld查看状态： systemctl status firewalld停止： systemctl disable firewalld禁用： systemctl stop firewalld">
+<meta name="twitter:title" content="小事汇聚成功">
+<meta name="twitter:description" content="LAMP是Linux Apache MySQL PHP 的简写，即把Apache 、MySQL以及PHP安装在Linux系统上，组成一个环境来运行PHP的脚本语言，通常是网站。我们可以把Apache+PHP安装在一台机器上，再把MySQL安装在另外一台机器上，也可以把它们三个安装在一台机器上。但Apache和PHP需要在同一台机器上，这是因为PHP是作为Apache的一个模块存在的，它们必须在一">
   
     <link rel="alternative" href="/atom.xml" title="奕中世界" type="application/atom+xml">
   
@@ -153,32 +153,74 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CentOS7使用firewalld打开关闭防火墙与端口" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LAMP环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CentOS7使用firewalld打开关闭防火墙与端口
+      小事汇聚成功
     </h1>
   
 
         
-        <a href="/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/" class="archive-article-date">
-  	<time datetime="2018-05-26T04:00:51.437Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+        <a href="/2018/09/02/LAMP环境搭建/" class="archive-article-date">
+  	<time datetime="2018-09-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、firewalld的基本使用<br>启动： systemctl start firewalld<br>查看状态： systemctl status firewalld<br>停止： systemctl disable firewalld<br>禁用： systemctl stop firewalld</p>
- <a id="more"></a>
-<p>2.systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。<br>启动一个服务：systemctl start firewalld.service<br>关闭一个服务：systemctl stop firewalld.service<br>重启一个服务：systemctl restart firewalld.service<br>显示一个服务的状态：systemctl status firewalld.service<br>在开机时启用一个服务：systemctl enable firewalld.service<br>在开机时禁用一个服务：systemctl disable firewalld.service<br>查看服务是否开机启动：systemctl is-enabled firewalld.service<br>查看已启动的服务列表：systemctl list-unit-files|grep enabled<br>查看启动失败的服务列表：systemctl –failed</p>
-<p>3.配置firewalld-cmd</p>
-<p>查看版本： firewall-cmd –version<br>查看帮助： firewall-cmd –help<br>显示状态： firewall-cmd –state<br>查看所有打开的端口： firewall-cmd –zone=public –list-ports<br>更新防火墙规则： firewall-cmd –reload<br>查看区域信息:  firewall-cmd –get-active-zones<br>查看指定接口所属区域： firewall-cmd –get-zone-of-interface=eth0<br>拒绝所有包：firewall-cmd –panic-on<br>取消拒绝状态： firewall-cmd –panic-off<br>查看是否拒绝： firewall-cmd –query-panic</p>
-<p>那怎么开启一个端口呢<br>添加<br>firewall-cmd –zone=public –add-port=80/tcp –permanent    （–permanent永久生效，没有此参数重启后失效）<br>重新载入<br>firewall-cmd –reload<br>查看<br>firewall-cmd –zone= public –query-port=80/tcp<br>删除<br>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
+        <hr>
+<p>LAMP是Linux Apache MySQL PHP 的简写，即把Apache 、MySQL以及PHP安装在Linux系统上，组成一个环境来运行PHP的脚本语言，通常是网站。我们可以把Apache+PHP安装在一台机器上，再把MySQL安装在另外一台机器上，也可以把它们三个安装在一台机器上。但Apache和PHP需要在同一台机器上，这是因为PHP是作为Apache的一个模块存在的，它们必须在一起。</p>
+<a id="more"></a>
+<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p>我们平时是通过源码包安装MySQL的，但是由于它的编译时间比较长，在这里我建议安装二进制免编译包。源码包都是可以更改的C或C++语言编写的源码文件，而免编译的二进制包就是已经编译过的文件再打包提供给我们。目前常用的mysql-5.6以上版本，所以这里使用mysql-5.6版本做演示。（我的系统是CentOS 7 64位）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">建议以后把所有软件包都放在这个目录下面</span><br><span class="line"> #cd /usr/local/src/</span><br><span class="line">下载源码包</span><br><span class="line"> #wget http://mirrors.163.com/mysql/Downloads/MySQL-5.6/mysql-5.6.39-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>下面进行初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">解压</span><br><span class="line"># tar zxf mysql-5.6.39-linux-glibc2.12-x86_64.tar.gz </span><br><span class="line"></span><br><span class="line">移动位置，自己先确认移动之前mysql这个目录是空的或者不存的</span><br><span class="line"># mv mysql-5.6.39-linux-glibc2.12-x86_64 /usr/local/mysql</span><br><span class="line"></span><br><span class="line">建立MySQL用户，因为启动MySQL需要该用户</span><br><span class="line"># useradd -s /sbin/nologin mysql</span><br><span class="line"></span><br><span class="line">进入到移动后的mysql目录中</span><br><span class="line"># cd /usr/local/mysql/</span><br><span class="line"></span><br><span class="line">创建datadir,数据库文件会放到这里面</span><br><span class="line"># mkdir -p /data/mysql</span><br><span class="line"></span><br><span class="line">更改权限，不该的话后续操作会出问题</span><br><span class="line"># chown -R mysql:mysql /data/mysql</span><br><span class="line"></span><br><span class="line">下面一条命令的--user表示数据库以哪个用户的身份进行运行，--datadir表示定义数据的安装目录</span><br><span class="line"># ./scripts/mysql_install_db --user=mysql --datadir=/data/mysql</span><br></pre></td></tr></table></figure></p>
+<p>在执行上面最后一条命令可能会报下面的错误信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FATA ERROR: please install the following Perl modules before executing ./scripts/mysql_install_db:Data::Dumper</span><br></pre></td></tr></table></figure></p>
+<p>这是因为缺少perl-Module-Install，使用下面的命令进行安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y perl-Module-Install</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h2><p>首先复制配置文件，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># cp support-files/my-default.cnf /etc/my.cnf</span><br></pre></td></tr></table></figure></p>
+<p>因为系统中默认有my.cnf，所以会提示是否覆盖，这是我们选择直接按“y”即可。<br>接着使用vim进行修改配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/my.cnf</span><br></pre></td></tr></table></figure></p>
+<p>修改成如下效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"></span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"></span><br><span class="line">innodb_buffer_pool_size = 128M</span><br><span class="line"></span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line">log_bin = liu-server</span><br><span class="line"></span><br><span class="line"># These are commonly set, remove the # and set as required.</span><br><span class="line"></span><br><span class="line">basedir = /usr/local/mysql</span><br><span class="line">datadir = /data/mysql</span><br><span class="line">port = 3306</span><br><span class="line">server_id = 128</span><br><span class="line">socket = /tmp/mysql.sock</span><br><span class="line"></span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"></span><br><span class="line">join_buffer_size = 128M</span><br><span class="line">sort_buffer_size = 2M</span><br><span class="line">read_rnd_buffer_size = 2M</span><br><span class="line"></span><br><span class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</span><br></pre></td></tr></table></figure></p>
+<p>然后复制启动脚本文件并修改属性，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cp support-files/mysql.server /etc/init.d/mysqld </span><br><span class="line"># chmod 755 /etc/init.d/mysqld</span><br></pre></td></tr></table></figure></p>
+<p>然后修改启动脚本，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vim /etc/init.d/mysqld</span><br></pre></td></tr></table></figure></p>
+<p>把datadir设置成datadir=/data/mysql（前面初始化数据库时定义的目录）。把启动脚本加入系统启动项，设定开机启动并启动MySQL，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig --add mysqld</span><br><span class="line"># chkconfig mysqld on</span><br><span class="line"># service mysqld start</span><br></pre></td></tr></table></figure></p>
+<p>如果启动不了，请到/data/mysql/目录下查看错误日志，这个日志的名字通常是主机名.err。<br>检查MySQL是否启动，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># ps aux | grep mysqld</span><br><span class="line">root      59075  0.0  0.0 112676   984 pts/0    R+   18:04   0:00 grep --color=auto mysqld</span><br><span class="line"></span><br><span class="line"># netstat -lnp | grep 3306</span><br><span class="line">tcp6       0      0 :::3306                 :::*                    LISTEN      4088/mysqld</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装Apache"><a href="#安装Apache" class="headerlink" title="安装Apache"></a>安装Apache</h2><p>这里值得提醒的是人们说Apache的时候就是在说httpd。目前使用较多的版本是2.2或2.4，两个版本的安装大同小异，配置也差别不大。不过2.4版本有一个比较麻烦的事情就是需要手动编译安装apr以及apr-util包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#cd /usr/local/src/</span><br><span class="line"></span><br><span class="line">下载源码包</span><br><span class="line"></span><br><span class="line"># wget http://mirrors.cnnic.cn/apache/httpd/httpd-2.4.34.tar.gz</span><br><span class="line"># wget http://mirrors.cnnic.cn/apache/apr/apr-1.6.3.tar.gz</span><br><span class="line"># wget http://mirrors.cnnic.cn/apache/apr/apr-util-1.6.1.tar.gz</span><br></pre></td></tr></table></figure>
+<p>解压下载好的源码包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># tar zxvf httpd-2.4.34.tar.gz </span><br><span class="line"># tar zxvf apr-1.6.3.tar.gz </span><br><span class="line"># tar zxvf apr-util-1.6.1.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>其中apr可以理解成一个通用的函数库，主要为上层应用提供支持。</p>
+<p>接着编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local/src/apr-1.6.3</span><br><span class="line"># ./config --prefix=/usr/local/apr</span><br><span class="line"># make &amp;&amp; make install</span><br><span class="line"># cd /usr/local/src/apr-util-1.6.1</span><br><span class="line"># ./config --prefix=/usr/local/apr-util --with-apr=/usr/local/apr</span><br><span class="line"># make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>如果出现在安装apr-util时出现如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># make: ***[libaprutil-1.la] error 1</span><br></pre></td></tr></table></figure></p>
+<p>解决办法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y expat-devel</span><br></pre></td></tr></table></figure>
+<p>安装完a后重新编译安装，再继续安装httpd：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local/src/httpd-2.4.34</span><br><span class="line"></span><br><span class="line"># yum install -y pcre pcre-devel</span><br><span class="line"></span><br><span class="line"># ./configure --prefix=/usr/local/apache2 --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util --with-pcre=/usr/local/pcre --enable-mods-shared=most --enable-so --with-included-apr</span><br></pre></td></tr></table></figure>
+<p>如果在执行上面的命令出现下面的错误命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">make[2]: *** [htpasswd] Error 1</span><br><span class="line">make[2]: Leaving directory `/usr/local/httpd-2.4.34/support&apos;</span><br><span class="line">make[1]: *** [all-recursive] Error 1</span><br><span class="line">make[1]: Leaving directory `/usr/local/httpd-2.4.34/support&apos;</span><br><span class="line">make: *** [all-recursive] Error 1</span><br></pre></td></tr></table></figure></p>
+<p>可以通过下面的办法解决：<br>把解压好的apr和apr-util 复制到 /httpd-2.4.34/srclib/ 中去<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># cp -r apr-1.6.1 /usr/local/src/httpd-2.4.34/srclib/apr</span><br><span class="line"># cp -r apr-util-1.6.3 /usr/local/src/httpd-2.4.34/srclib/apr-util</span><br><span class="line"></span><br><span class="line"># make </span><br><span class="line"># make install</span><br></pre></td></tr></table></figure></p>
+<p>因为我的CENTOS 是 64bit的，如果在编译配置没有指定 –with-included-apr的具体引用路径，导致找不到相应的库文件，而 –with-included-apr 默认是查找/usr/lib下的库文件，而，正确的引用应该是/usr/lib64下的。这类情况在64bit下非常常见，请大家多注意！</p>
+<p>检验是否成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ls /usr/local/apache2.4/modules/</span><br></pre></td></tr></table></figure></p>
+<p>出现许多以.so结尾的文件，代表成功。</p>
+<h2 id="安装PHP"><a href="#安装PHP" class="headerlink" title="安装PHP"></a>安装PHP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local/src</span><br><span class="line"># wget http://cn2.php.net/distributions/php-5.6.32.tar.bz2</span><br><span class="line"></span><br><span class="line">解压下载后的源码包</span><br><span class="line"></span><br><span class="line"># bzip2 -d php-5.6.32.tar.bz2 </span><br><span class="line"># tar xf php-5.6.32.tar</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">./configure \ 反斜杠是转义字符，它可以把一行命令写成多行</span><br><span class="line">--prefix=/usr/local/php \</span><br><span class="line">--with-apxs2=/usr/local/apache2.4/bin/apxs \</span><br><span class="line">--with-config-file-path=/usr/local/php/etc \</span><br><span class="line">--with-mysql=/usr/local/mysql \</span><br><span class="line">--with-libxml-dir \</span><br><span class="line">--with-gd \</span><br><span class="line">--with-jpeg-dir \</span><br><span class="line">--with-png-dir \</span><br><span class="line">--with-freetype-dir \</span><br><span class="line">--with-iconv-dir \</span><br><span class="line">--with-zlib-dir \</span><br><span class="line">--with-bz2 \</span><br><span class="line">--with-openssl \</span><br><span class="line">--with-mcrypt \</span><br><span class="line">--enable-soap \</span><br><span class="line">--enable-gd-native-ttf \</span><br><span class="line">--enable-mbstring \</span><br><span class="line">--enable-sockets \</span><br><span class="line">--enable-exif</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">错误1：configure: error: xml2-config not found. Please check your libxml2 installation.</span><br><span class="line">解决方法：yum install -y libxml2-devel</span><br><span class="line"> </span><br><span class="line">错误2：configure: error: Cannot found Openssl&apos;s &lt;evp.h&gt;</span><br><span class="line"> 解决方法：yum install -y openssl openssl-devel</span><br><span class="line"> </span><br><span class="line">错误3：configure: error: jpeglib.h not found.</span><br><span class="line">解决方法： yum install -y libjpeg libjpeg-devel  </span><br><span class="line"> </span><br><span class="line"> 错误4：configure: error: png.h not found.</span><br><span class="line"> 解决方法：yum install -y libpng libpng-devel </span><br><span class="line"> </span><br><span class="line"> 错误5：configure: error: freetype-config not found.</span><br><span class="line"> 解决方法：yum install -y freetype freetype-devel</span><br><span class="line"> </span><br><span class="line"> 错误6：configure: error: mcrypt.h not found. Please reinstall libmcrypt.</span><br><span class="line"> 解决方法：yum install -y epel-release</span><br><span class="line">           yum install -y libmcrypt-devel</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>这时候请耐心等待，需要几分钟的时间。</p>
+<p> 复制配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># cp php.ini-production /usr/local/php/etc/php.ini</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置httpd支持PHP"><a href="#配置httpd支持PHP" class="headerlink" title="配置httpd支持PHP"></a>配置httpd支持PHP</h2><p>httpd的主配置文件为 /usr/local/apache2.4/conf/httpd.conf，编辑这个文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vim /usr/local/apache2.4/conf/httpd.conf</span><br></pre></td></tr></table></figure></p>
+<p>搜索Servername，把#ServerName www.example.com:80前面的#号删除。找到如下内容：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;Directory /&gt;</span><br><span class="line">    AllowOverride none</span><br><span class="line">    Require all denied</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+<p> 修改成：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;Directory /&gt;</span><br><span class="line">    AllowOverride none</span><br><span class="line">    Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure></p>
+<p>修改该行的目的是，允许所有的请求。再继续搜索下面这一行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#AddType application/x-gzip .tgz</span><br></pre></td></tr></table></figure></p>
+<p>删除前面的#，并在该行的下面添加一行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType application/x-httpd-php .php</span><br></pre></td></tr></table></figure></p>
+<p>接着找到下面这一段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule dir_module&gt;</span><br><span class="line">    DirectoryIndex index.html</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将该行修改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule dir_module&gt;</span><br><span class="line">    DirectoryIndex index.html index.php</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="测试LAMP是否搭建成功"><a href="#测试LAMP是否搭建成功" class="headerlink" title="测试LAMP是否搭建成功"></a>测试LAMP是否搭建成功</h2><p>启动httpd之前需要检验配置文件是否正确，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#/usr/local/apache2.4/bin/apachectl -t</span><br></pre></td></tr></table></figure></p>
+<p>如果配置正确则会显示“Syntax OK”。否则继续修改配置文件httpd.conf。启动httpd的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#/usr/local/apache2.4/bin/apachectl start</span><br></pre></td></tr></table></figure></p>
+<p>查看是否启动的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># netstat -lnp | grep httpd</span><br><span class="line">tcp6       0      0 :::80                   :::*                    LISTEN      58352/httpd</span><br></pre></td></tr></table></figure></p>
+<p>若显示上面的结果则表示启动成功！</p>
 
       
 
@@ -248,7 +290,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://llyit.cn#http://liuluanyi.cn/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://llyit.cn#http://liuluanyi.cn/2018/09/02/LAMP环境搭建/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,18 +304,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/09/02/LAMP环境搭建/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          小事汇聚成功
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/26/CentOs7安装python3以及Scapy3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CentOs7安装python3以及Scapy3</div>
+    <a href="/2018/05/26/CentOS7使用firewalld打开关闭防火墙与端口/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOS7使用firewalld打开关闭防火墙与端口</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -303,7 +336,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="CentOS7使用firewalld打开关闭防火墙与端口" ></div> 
+  <div id="SOHUCS" sid="LAMP环境搭建" ></div> 
 <script type="text/javascript"> 
 window.YiliaChangyanWrap = function() {
     var appid = "cytjFXjSQ"; 
