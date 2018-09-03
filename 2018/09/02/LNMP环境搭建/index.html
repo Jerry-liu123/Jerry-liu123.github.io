@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://llyit.cn#http://liuluanyi.cn">
-  <title>Archives: 2018/9 | 奕中世界</title>
+  <title>LNMP环境搭建 | 奕中世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好吃懒做">
-<meta property="og:type" content="website">
-<meta property="og:title" content="奕中世界">
-<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/archives/2018/09/index.html">
+  <meta name="description" content="安装MySQL请参考LAMP的操作，此处不多加赘述 安装PHPNginx的PHP安装和LAMP环境搭建中的PHP安装是有区别的。因为Nginx中的PHP是以fastcgi的方式结合Nginx的，而httpd是把PHP作为自己的模块来调用的。 我这里还是使用LAMP中的源代码地址进行下载的。其中下载和解压的过程请参考LAMP环境搭建的命令。 创建账号，来运行php-fpm服务1# useradd -">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LNMP环境搭建">
+<meta property="og:url" content="http://llyit.cn#http://liuluanyi.cn/2018/09/02/LNMP环境搭建/index.html">
 <meta property="og:site_name" content="奕中世界">
-<meta property="og:description" content="好吃懒做">
+<meta property="og:description" content="安装MySQL请参考LAMP的操作，此处不多加赘述 安装PHPNginx的PHP安装和LAMP环境搭建中的PHP安装是有区别的。因为Nginx中的PHP是以fastcgi的方式结合Nginx的，而httpd是把PHP作为自己的模块来调用的。 我这里还是使用LAMP中的源代码地址进行下载的。其中下载和解压的过程请参考LAMP环境搭建的命令。 创建账号，来运行php-fpm服务1# useradd -">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-03T14:16:11.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="奕中世界">
-<meta name="twitter:description" content="好吃懒做">
+<meta name="twitter:title" content="LNMP环境搭建">
+<meta name="twitter:description" content="安装MySQL请参考LAMP的操作，此处不多加赘述 安装PHPNginx的PHP安装和LAMP环境搭建中的PHP安装是有区别的。因为Nginx中的PHP是以fastcgi的方式结合Nginx的，而httpd是把PHP作为自己的模块来调用的。 我这里还是使用LAMP中的源代码地址进行下载的。其中下载和解压的过程请参考LAMP环境搭建的命令。 创建账号，来运行php-fpm服务1# useradd -">
   
     <link rel="alternative" href="/atom.xml" title="奕中世界" type="application/atom+xml">
   
@@ -151,36 +153,93 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-LNMP环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/02/LNMP环境搭建/" class="archive-article-date">
-  	<time datetime="2018-09-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/02/LNMP环境搭建/">LNMP环境搭建</a>
+    <h1 class="article-title" itemprop="name">
+      LNMP环境搭建
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/09/02/LNMP环境搭建/" class="archive-article-date">
+  	<time datetime="2018-09-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p>请参考LAMP的操作，此处不多加赘述</p>
+<h2 id="安装PHP"><a href="#安装PHP" class="headerlink" title="安装PHP"></a>安装PHP</h2><p>Nginx的PHP安装和LAMP环境搭建中的PHP安装是有区别的。因为Nginx中的PHP是以fastcgi的方式结合Nginx的，而httpd是把PHP作为自己的模块来调用的。</p>
+<p>我这里还是使用LAMP中的源代码地址进行下载的。其中下载和解压的过程请参考LAMP环境搭建的命令。</p>
+<p>创建账号，来运行php-fpm服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># useradd -s /sbin/nologin php-fpm</span><br></pre></td></tr></table></figure></p>
+<p>进行编译，此处和LAMP环境搭建是有区别的，多了<code>--enable-fpm</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/php-fpm \</span><br><span class="line">--with-config-file-path=/usr/local/php-fpm/etc \</span><br><span class="line">--enable-fpm \</span><br><span class="line">--with-fpm-user=php-fpm \</span><br><span class="line">--with-fpm-group=php-fpm \</span><br><span class="line">--with-mysql=/usr/local/mysql \</span><br><span class="line">--with-mysql-sock=/tmp/mysql.sock \</span><br><span class="line">--with-libxml-dir \</span><br><span class="line">--with-gd \</span><br><span class="line">--with-jpeg-dir \</span><br><span class="line">--with-png-dir \</span><br><span class="line">--with-freetype-dir \</span><br><span class="line">--with-iconv-dir \</span><br><span class="line">--with-zlib-dir \</span><br><span class="line">--with-mcrypt \</span><br><span class="line">--enable-soap \</span><br><span class="line">--enable-gd-native-ttf \</span><br><span class="line">--enable-ftp \</span><br><span class="line">--enable-mbstring \</span><br><span class="line">--enable-exif \</span><br><span class="line">--disable-ipv6 \</span><br><span class="line">--with-pear \</span><br><span class="line">--with-curl \</span><br><span class="line">--with-openssl</span><br></pre></td></tr></table></figure></p>
+<p>执行上述命令可能会出现下面的报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">错误1：configure: error: Please reinstall the libcurl distribution -</span><br><span class="line">    easy.h should be in &lt;curl-dir&gt;/include/curl/</span><br></pre></td></tr></table></figure>
+<p>解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y libcurl-devel</span><br></pre></td></tr></table></figure></p>
+<p>重新编译：<code>make</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">错误2：/usr/bin/ld: TSRM/.libs/TSRM.o: undefined reference to symbol &apos;pthread_sigmask@@GLIBC_2.2.5&apos;</span><br><span class="line">/usr/lib64/libpthread.so.0: error adding symbols: DSO missing from command line</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line">make: *** [sapi/cli/php] 错误 1</span><br></pre></td></tr></table></figure>
+<p>解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># vim Makefile</span><br><span class="line">搜索-lcrypt在其后面加上 -lpthread</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">错误3：collect2: error: ld returned 1 exit status</span><br><span class="line">make: *** [sapi/cli/php] 错误 1</span><br></pre></td></tr></table></figure>
+<p>解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># make clean &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
+<p>问题到这里就可以编译成功进行安装了！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># make install</span><br></pre></td></tr></table></figure></p>
+<p>修改配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># cp php.ini-production /usr/local/php-fpm/etc/php.ini</span><br><span class="line"></span><br><span class="line"># vim /usr/local/php-fpm/etc/php-fpm.conf</span><br></pre></td></tr></table></figure>
+<p>把下面的内容填入到该文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">pid = /usr/local/php-fpm/var/run/php-fpm.pid</span><br><span class="line">error_log = /usr/local/php-fpm/var/log/php-fpm.log</span><br><span class="line">[www]</span><br><span class="line">listen = /tmp/php-fcgi.sock</span><br><span class="line">listen.mode = 666</span><br><span class="line">user = php-fpm</span><br><span class="line">group = php-fpm</span><br><span class="line">pm = dynamic</span><br><span class="line">pm.max_children = 50</span><br><span class="line">pm.start_servers = 20</span><br><span class="line">pm.min_spare_servers = 5</span><br><span class="line">pm.max_spare_servers = 35</span><br><span class="line">pm.max_requests = 500</span><br><span class="line">rlimit_files = 1024</span><br></pre></td></tr></table></figure>
+<p>保存配置文件后，检验配置是否正确<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /usr/local/php-fpm/sbin/php-fpm -t</span><br></pre></td></tr></table></figure></p>
+<p>出现下面的test is successful,代表配置正确<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[03-Sep-2018 15:46:38] NOTICE: configuration file /usr/local/php-fpm/etc/php-fpm.conf test is successful</span><br></pre></td></tr></table></figure></p>
+<p>启动php-fpm:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># cp /usr/local/src/php-5.6.32/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm</span><br><span class="line"></span><br><span class="line"># chmod 755 /etc/init.d/php-fpm </span><br><span class="line"></span><br><span class="line"># service php-fpm start</span><br></pre></td></tr></table></figure>
+<p>出现下面字样代表成功！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Starting php-fpm  done</span><br></pre></td></tr></table></figure></p>
+<p>设置开机启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig php-fpm on</span><br></pre></td></tr></table></figure></p>
+<p>查看php-fpm是否启动的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ps aux | grep php-fpm</span><br></pre></td></tr></table></figure></p>
+<p>下载Nginx源码包并解压：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local/src/</span><br><span class="line"># wget http://nginx.org/download/nginx-1.8.0.tar.gz</span><br><span class="line"></span><br><span class="line"># tar zxvf nginx-1.8.0.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>配置编译选项并安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cd nginx-1.8.0/</span><br><span class="line"># ./configure --prefix=/usr/local/nginx</span><br><span class="line"></span><br><span class="line"># make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p>
+<p>编写Nginx的启动脚本，并加入系统服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/init.d/nginx</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">//脚本文件内容</span><br><span class="line"></span><br><span class="line">#!/bin/bash</span><br><span class="line"># chkconfig: - 30 21</span><br><span class="line"># description: http service.</span><br><span class="line"># Source Function Library</span><br><span class="line">. /etc/init.d/functions</span><br><span class="line"># Nginx Settings</span><br><span class="line"></span><br><span class="line">NGINX_SBIN=&quot;/usr/local/nginx/sbin/nginx&quot;</span><br><span class="line">NGINX_CONF=&quot;/usr/local/nginx/conf/nginx.conf&quot;</span><br><span class="line">NGINX_PID=&quot;/usr/local/nginx/logs/nginx.pid&quot;</span><br><span class="line">RETVAL=0</span><br><span class="line">prog=&quot;Nginx&quot;</span><br><span class="line"></span><br><span class="line">start() </span><br><span class="line">&#123;</span><br><span class="line">    echo -n $&quot;Starting $prog: &quot;</span><br><span class="line">    mkdir -p /dev/shm/nginx_temp</span><br><span class="line">    daemon $NGINX_SBIN -c $NGINX_CONF</span><br><span class="line">    RETVAL=$?</span><br><span class="line">    echo</span><br><span class="line">    return $RETVAL</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">stop() </span><br><span class="line">&#123;</span><br><span class="line">    echo -n $&quot;Stopping $prog: &quot;</span><br><span class="line">    killproc -p $NGINX_PID $NGINX_SBIN -TERM</span><br><span class="line">    rm -rf /dev/shm/nginx_temp</span><br><span class="line">    RETVAL=$?</span><br><span class="line">    echo</span><br><span class="line">    return $RETVAL</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reload()</span><br><span class="line">&#123;</span><br><span class="line">    echo -n $&quot;Reloading $prog: &quot;</span><br><span class="line">    killproc -p $NGINX_PID $NGINX_SBIN -HUP</span><br><span class="line">    RETVAL=$?</span><br><span class="line">    echo</span><br><span class="line">    return $RETVAL</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">restart()</span><br><span class="line">&#123;</span><br><span class="line">    stop</span><br><span class="line">    start</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">configtest()</span><br><span class="line">&#123;</span><br><span class="line">    $NGINX_SBIN -c $NGINX_CONF -t</span><br><span class="line">    return 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">case &quot;$1&quot; in</span><br><span class="line">  start)</span><br><span class="line">        start</span><br><span class="line">        ;;</span><br><span class="line">  stop)</span><br><span class="line">        stop</span><br><span class="line">        ;;</span><br><span class="line">  reload)</span><br><span class="line">        reload</span><br><span class="line">        ;;</span><br><span class="line">  restart)</span><br><span class="line">        restart</span><br><span class="line">        ;;</span><br><span class="line">  configtest)</span><br><span class="line">        configtest</span><br><span class="line">        ;;</span><br><span class="line">  *)</span><br><span class="line">        echo $&quot;Usage: $0 &#123;start|stop|reload|restart|configtest&#125;&quot;</span><br><span class="line">        RETVAL=1</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">exit $RETVAL</span><br></pre></td></tr></table></figure>
+<p>保存脚本后更改权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># chmod 755 /etc/init.d/nginx </span><br><span class="line"></span><br><span class="line"># chkconfig --add nginx</span><br></pre></td></tr></table></figure></p>
+<p>加入开机启动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig nginx on</span><br></pre></td></tr></table></figure></p>
+<p>把nginx.conf的配置文件清空，并重新写入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"># &gt; /usr/local/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line"># vim /usr/local/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line">//配置文件内容：</span><br><span class="line"></span><br><span class="line">user nobody nobody;</span><br><span class="line">worker_processes 2;</span><br><span class="line">error_log /usr/local/nginx/logs/nginx_error.log crit;</span><br><span class="line">pid /usr/local/nginx/logs/nginx.pid;</span><br><span class="line">worker_rlimit_nofile 51200;</span><br><span class="line"></span><br><span class="line">events</span><br><span class="line">&#123;</span><br><span class="line">    use epoll;</span><br><span class="line">    worker_connections 6000;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http</span><br><span class="line">&#123;</span><br><span class="line">    include mime.types;</span><br><span class="line">    default_type application/octet-stream;</span><br><span class="line">    server_names_hash_bucket_size 3526;</span><br><span class="line">    server_names_hash_max_size 4096;</span><br><span class="line">    log_format combined_realip &apos;$remote_addr $http_x_forwarded_for [$time_local]&apos;</span><br><span class="line">    &apos; $host &quot;$request_uri&quot; $status&apos;</span><br><span class="line">    &apos; &quot;$http_referer&quot; &quot;$http_user_agent&quot;&apos;;</span><br><span class="line">    sendfile on;</span><br><span class="line">    tcp_nopush on;</span><br><span class="line">    keepalive_timeout 30;</span><br><span class="line">    client_header_timeout 3m;</span><br><span class="line">    client_body_timeout 3m;</span><br><span class="line">    send_timeout 3m;</span><br><span class="line">    connection_pool_size 256;</span><br><span class="line">    client_header_buffer_size 1k;</span><br><span class="line">    large_client_header_buffers 8 4k;</span><br><span class="line">    request_pool_size 4k;</span><br><span class="line">    output_buffers 4 32k;</span><br><span class="line">    postpone_output 1460;</span><br><span class="line">    client_max_body_size 10m;</span><br><span class="line">    client_body_buffer_size 256k;</span><br><span class="line">    client_body_temp_path /usr/local/nginx/client_body_temp;</span><br><span class="line">    proxy_temp_path /usr/local/nginx/proxy_temp;</span><br><span class="line">    fastcgi_temp_path /usr/local/nginx/fastcgi_temp;</span><br><span class="line">    fastcgi_intercept_errors on;</span><br><span class="line">    tcp_nodelay on;</span><br><span class="line">    gzip on;</span><br><span class="line">    gzip_min_length 1k;</span><br><span class="line">    gzip_buffers 4 8k;</span><br><span class="line">    gzip_comp_level 5;</span><br><span class="line">    gzip_http_version 1.1;</span><br><span class="line">    gzip_types text/plain application/x-javascript text/css text/htm </span><br><span class="line">    application/xml;</span><br><span class="line"></span><br><span class="line">    server</span><br><span class="line">    &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name localhost;</span><br><span class="line">        index index.html index.htm index.php;</span><br><span class="line">        root /usr/local/nginx/html;</span><br><span class="line"></span><br><span class="line">        location ~ \.php$ </span><br><span class="line">        &#123;</span><br><span class="line">            include fastcgi_params;</span><br><span class="line">            fastcgi_pass unix:/tmp/php-fcgi.sock;</span><br><span class="line">            fastcgi_index index.php;</span><br><span class="line">            fastcgi_param SCRIPT_FILENAME /usr/local/nginx/html$fastcgi_script_name;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>检验配置是否正确：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /usr/local/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure>
+<p>显示<code>test is successful</code>代表配置正确<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful</span><br></pre></td></tr></table></figure></p>
+<p>开启Nginx服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//注意：apache服务不可同时打开,否则有报错</span><br><span class="line"></span><br><span class="line"># service nginx start</span><br></pre></td></tr></table></figure></p>
+<p>正确开启服务，出现的现象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># service nginx start            </span><br><span class="line">Starting nginx (via systemctl):                            [  确定  ]</span><br></pre></td></tr></table></figure>
+<p>确认Nginx的状态命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl status nginx</span><br></pre></td></tr></table></figure></p>
+<p>创建测试文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># vim /usr/local/nginx/html/2.php</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">        echo &quot;test php scripts.\n&quot;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>检验是否解析正常：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"> # curl localhost/2.php           </span><br><span class="line"> test php scripts.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h2><h3 id="默认虚拟主机"><a href="#默认虚拟主机" class="headerlink" title="默认虚拟主机"></a>默认虚拟主机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># vi /usr/local/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line">到最后一个大括号&#125;前添加一条命令：</span><br><span class="line">include vhost/*.conf;</span><br><span class="line"></span><br><span class="line">//上面那条命令是为了加载在vhost目录以conf结尾的配置文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /usr/local/nginx/conf/vhost</span><br><span class="line"></span><br><span class="line"># cd /usr/local/nginx/conf/vhost</span><br><span class="line"></span><br><span class="line"># vim default.conf</span><br><span class="line"></span><br><span class="line">//配置文件内容</span><br><span class="line"></span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    listen 80 default_server;  //有这个标记的就是默认虚拟主机</span><br><span class="line">    server_name liutest.com;</span><br><span class="line">    index index.html index.htm index.php;</span><br><span class="line">    root /data/nginx/default;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>检验是否配置正确：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /usr/local/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure></p>
+<p>出现<code>test is successful</code>代表配置正确。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful</span><br></pre></td></tr></table></figure></p>
+<p>重启Nginx服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure></p>
+<p>创建default目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p /data/nginx/default</span><br></pre></td></tr></table></figure></p>
+<p>创建索引页：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># echo &quot;default_server&quot; &gt; /data/nginx/default/index.html</span><br></pre></td></tr></table></figure></p>
+<p>检验解析是否正常：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># curl -x127.0.0.1:80 liutest.com</span><br><span class="line"></span><br><span class="line">default_server</span><br></pre></td></tr></table></figure></p>
+<p>创建一个新的虚拟主机：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local/nginx/conf/vhost/</span><br><span class="line"># vim test.com.conf</span><br><span class="line"></span><br><span class="line">//配置文件内容</span><br><span class="line">server</span><br><span class="line">    &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name test.com;</span><br><span class="line">        index index.html index.htm index.php;</span><br><span class="line">        root /data/nginx/test.com;</span><br><span class="line"></span><br><span class="line">        location / </span><br><span class="line">        &#123;</span><br><span class="line">            auth_basic              &quot;Auth&quot;;</span><br><span class="line">			auth_basic_user_file   /usr/local/nginx/conf/htpasswd;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>配置文件中<code>auth_basic</code>是为了打开认证，<code>auth_basic_user_file</code>指定用户密码文件</p>
+<p>安装过httpd,如果之前安装了apache 2.4可不用安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y httpd</span><br></pre></td></tr></table></figure></p>
+<p>创建用户liu<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># htpasswd -c /usr/local/nginx/conf/htpasswd liu</span><br><span class="line"></span><br><span class="line">New password: </span><br><span class="line">Re-type new password: </span><br><span class="line">Adding password for user liu</span><br></pre></td></tr></table></figure></p>
+<p>检验是否配置正确：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /usr/local/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure></p>
+<p>出现下面<code>test is successful</code>代表配置正确。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful</span><br></pre></td></tr></table></figure></p>
+<p>重启Nginx服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure></p>
+<p>使用curl命令进行验证用户认证配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /data/nginx/test.com</span><br><span class="line"># echo &quot;test.com&quot; &gt; /data/nginx/test.com/index.html</span><br><span class="line"># curl -I -x127.0.0.1:80 test.com</span><br></pre></td></tr></table></figure></p>
+<p>出现下面<code>401 Unauthorized</code>字样代表成功。如果你想看到图形化界面的认证方式，可以用能与之通信的window系统，配置好hosts文件，访问<code>test.com</code>即可看到效果。若此处不知道如何配置，可留言。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 401 Unauthorized</span><br><span class="line">Server: nginx/1.8.0</span><br><span class="line">Date: Mon, 03 Sep 2018 12:00:15 GMT</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Content-Length: 194</span><br><span class="line">Connection: keep-alive</span><br><span class="line">WWW-Authenticate: Basic realm=&quot;Auth&quot;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -192,57 +251,117 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://llyit.cn#http://liuluanyi.cn/2018/09/02/LNMP环境搭建/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/02/LAMP环境搭建/" class="archive-article-date">
-  	<time datetime="2018-09-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/02/LAMP环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LAMP环境搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/02/LAMP环境搭建/">LAMP环境搭建</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
+  <div id="SOHUCS" sid="LNMP环境搭建" ></div> 
+<script type="text/javascript"> 
+window.YiliaChangyanWrap = function() {
+    var appid = "cytjFXjSQ"; 
+    var conf = "463dfb67990e444b6230b6b15304c1a3"; 
+    var width = window.innerWidth || document.documentElement.clientWidth; 
+    if (width < 960) { 
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+}
+</script>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -265,8 +384,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
